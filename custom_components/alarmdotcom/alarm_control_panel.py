@@ -165,6 +165,13 @@ class AlarmDotCom(AlarmControlPanelEntity):
         return self._name
 
     @property
+    def code_arm_required(self):
+        """Whether the code is required for arm actions."""
+        if self._code is None:
+            return False
+        return True;        
+
+    @property
     def code_format(self):
         """Return one or more digits/characters."""
         if self._code is None:
