@@ -1,5 +1,5 @@
 {
-  "name": "Alarmdotcom",
-  "render_readme": true,
+  "name": "Alarmdotcom JPreiditsch",
+  "render_readme": false,
   "homeassistant": "0.105.0"
 }
