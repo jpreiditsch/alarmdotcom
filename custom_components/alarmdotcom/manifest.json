@@ -1,11 +1,11 @@
 {
   "domain": "alarmdotcom",
   "name": "Alarm.com",
-  "documentation": "https://www.github.com/uvjustin/alarmdotcom",
+  "documentation": "https://www.github.com/jpreiditsch/alarmdotcom",
   "requirements": [
     "beautifulsoup4",
-    "git+https://github.com/jpreiditsch/pyalarmdotcomajax.git@master"
+    "git+https://github.com/jpreiditsch/pyalarmdotcomajax.git@master#pyalarmdotcomajax==0.1.8"
   ],
   "dependencies": [],
-  "codeowners": ["@uvjustin"]
+  "codeowners": ["@jpreiditsch"]
 }
