@@ -3,7 +3,7 @@
 # What This Is:
 This is a custom component to allow Home Assistant to interface with the [Alarm.com](https://www.alarm.com/) site by scraping the Alarm.com web portal. This component is designed to integrate the Alarm.com security system functionality only - it requires an Alarm.com package which includes security system support, and it does not integrate any Alarm.com home automation functionality. Please note that Alarm.com may remove access at any time.
 
-
+ 
 ## Installation / Usage with Home Assistant
 
 1. Download this project as a zip file using GitHub's Clone or Download button at the top-right corner of the main project page.
