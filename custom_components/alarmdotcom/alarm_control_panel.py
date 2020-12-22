@@ -2,7 +2,7 @@
 import logging
 import re
 
-from pyalarmdotcomajax import Alarmdotcom, AlarmdotcomADT, AlarmdotcomProtection1
+from pyalarmdotcomajax import Alarmdotcom, AlarmdotcomADT
 import voluptuous as vol
 
 import homeassistant.components.alarm_control_panel as alarm
@@ -40,7 +40,6 @@ CONF_FORCE_BYPASS = "force_bypass"
 CONF_NO_ENTRY_DELAY = "no_entry_delay"
 CONF_SILENT_ARMING = "silent_arming"
 CONF_ADT = "adt"
-CONF_PROTECTION1 = "protection1"
 CONF_TWO_FACTOR_COOKIE = "two_factor_cookie"
 DOMAIN = "alarmdotcom"
 
@@ -54,7 +53,6 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
         vol.Optional(CONF_NO_ENTRY_DELAY, default="false"): cv.string,
         vol.Optional(CONF_SILENT_ARMING, default="false"): cv.string,
         vol.Optional(CONF_ADT, default=False): cv.boolean,
-        vol.Optional(CONF_PROTECTION1, default=False): cv.boolean,
         vol.Optional(CONF_TWO_FACTOR_COOKIE): cv.string,
     }
 )
@@ -74,8 +72,6 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     adt_or_protection1 = 0
     if config.get(CONF_ADT):
         adt_or_protection1 = 1
-    elif config.get(CONF_PROTECTION1):
-        adt_or_protection1 = 2
     if not use_new_websession:
         hass.data[DOMAIN] = True
         use_new_websession = False
@@ -136,8 +132,6 @@ class AlarmDotCom(AlarmControlPanelEntity):
         )
         if adt_or_protection1 == 1:
             adc_class = AlarmdotcomADT
-        #elif adt_or_protection1 == 2:
-            #adc_class = AlarmdotcomProtection1
         else:
             adc_class = Alarmdotcom
         self._alarm = adc_class(
