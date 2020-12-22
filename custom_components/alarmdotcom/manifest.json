@@ -4,7 +4,7 @@
   "documentation": "https://www.github.com/jpreiditsch/alarmdotcom",
   "requirements": [
     "beautifulsoup4",
-    "git+https://github.com/jpreiditsch/pyalarmdotcomajax.git@master#pyalarmdotcomajax==0.1.8.2"
+    "pyalarmdotcomajax==0.1.8"
   ],
   "dependencies": [],
   "codeowners": ["@jpreiditsch"]
