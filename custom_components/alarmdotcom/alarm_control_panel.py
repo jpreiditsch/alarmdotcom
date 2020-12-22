@@ -136,8 +136,8 @@ class AlarmDotCom(AlarmControlPanelEntity):
         )
         if adt_or_protection1 == 1:
             adc_class = AlarmdotcomADT
-        elif adt_or_protection1 == 2:
-            adc_class = AlarmdotcomProtection1
+        #elif adt_or_protection1 == 2:
+            #adc_class = AlarmdotcomProtection1
         else:
             adc_class = Alarmdotcom
         self._alarm = adc_class(
