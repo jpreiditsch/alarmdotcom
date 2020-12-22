@@ -147,7 +147,6 @@ class AlarmDotCom(AlarmControlPanelEntity):
             force_bypass,
             no_entry_delay,
             silent_arming,
-            two_factor_cookie,
         )
 
     async def async_login(self):
